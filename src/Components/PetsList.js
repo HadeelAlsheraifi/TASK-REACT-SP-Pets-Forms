@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import PetItem from './PetItem';
-import { observer } from 'mobx-react';
-import petStore from '../petStore';
+import React, { useState } from "react";
+import PetItem from "./PetItem";
+import { observer } from "mobx-react";
+import petStore from "../petStore";
+
+import Modal from "./Models/PetCreateModal";
+
 function PetsList() {
-  const [query, setQuery] = useState('');
-  const [type, setType] = useState('');
+  const [query, setQuery] = useState("");
+  const [type, setType] = useState("");
   const pets = petStore.pets
     .filter(
       (pet) =>
